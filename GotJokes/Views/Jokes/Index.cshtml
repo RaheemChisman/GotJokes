@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model GotJokes.Models.JokesModel.Rootobject
+<div>
+    @{
+        if (Model.setup != null)
+        {
+           <i>@Model.setup</i>
+           <hr />
+           <i>@Model.delivery</i>
+        }
+        <br />
+        <div>
+            @Html.ActionLink("Get Joke","GetJokes","Jokes",new {setup = Model.setup, delivery = Model.delivery}, new {@class="btn btn-primary"})
+       </div>
+    }
+ </div>
+
+     @*joke and punchline without button
+    <i>@Model.setup</i>
+    <br />
+    <i>@Model.delivery</i>
+   
+    
+   <a class="btn btn-primary btn-danger"  asp-route=@Model.delivery>test</a>
+   </div>
+   <br />
+   @*Actionlink button example*@
